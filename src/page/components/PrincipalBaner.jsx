@@ -1,7 +1,21 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
+import Typed from './typed'
+require("amd-loader");
 const PrincipalBaner = () => {
+    useEffect(()=>{
+        if (window.$('.hero .hero-text h2').length == 1) {
+            var typed_strings = window.$('.hero .hero-text .typed-text').text();
+            var typed = new Typed('.hero .hero-text h2', {
+                strings: typed_strings.split(', '),
+                typeSpeed: 100,
+                backSpeed: 20,
+                smartBackspace: false,
+                loop: true
+            });
+        }
+    },[])
     return (
+        
         <>
           <div class="hero" id="home">
             <div class="container-fluid">

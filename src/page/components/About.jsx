@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const About = () => {
+    useEffect(()=>{
+        window.$('.skills').waypoint(function () {
+            window.$('.progress .progress-bar').each(function () {
+                window.$(this).css("width", window.$(this).attr("aria-valuenow") + '%');
+            });
+        }, {offset: '80%'});
+    },[])
     return (
         <>
          <div class="about wow fadeInUp" data-wow-delay="0.1s" id="about">
