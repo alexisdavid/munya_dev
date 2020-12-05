@@ -1,6 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const Testimonial = () => {
+    useEffect(()=>{
+        window.$(".testimonials-carousel").owlCarousel({
+            center: true,
+            autoplay: true,
+            dots: true,
+            loop: true,
+            responsive: {
+                0:{
+                    items:1
+                }
+            }
+        });
+    },[])
     return (
         <div>
             <div class="testimonial wow fadeInUp" data-wow-delay="0.1s" id="review">

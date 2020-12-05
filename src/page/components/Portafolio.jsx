@@ -1,6 +1,20 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 
 const Portafolio = () => {
+    useEffect(()=>{
+        var portfolioIsotope = window.$('.portfolio-container').isotope({
+            itemSelector: '.portfolio-item',
+            layoutMode: 'fitRows'
+        });
+    
+        window.$('#portfolio-filter li').on('click', function () {
+            window.$("#portfolio-filter li").removeClass('filter-active');
+            window.$(this).addClass('filter-active');
+            portfolioIsotope.isotope({filter: window.$(this).data('filter')});
+        });
+        
+        
+    },[])
     return (
         <>
              <div class="portfolio" id="portfolio">
