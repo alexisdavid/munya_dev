@@ -1,19 +1,8 @@
 import React, { useEffect } from 'react';
-import Typed from './typed'
-require("amd-loader");
+import Typed from 'react-typed';
+import 'react-typed/dist/animatedCursor.css';
 const PrincipalBaner = () => {
-    useEffect(()=>{
-        if (window.$('.hero .hero-text h2').length == 1) {
-            var typed_strings = window.$('.hero .hero-text .typed-text').text();
-            var typed = new Typed('.hero .hero-text h2', {
-                strings: typed_strings.split(', '),
-                typeSpeed: 100,
-                backSpeed: 20,
-                smartBackspace: false,
-                loop: true
-            });
-        }
-    },[])
+   
     return (
         
         <>
@@ -23,10 +12,12 @@ const PrincipalBaner = () => {
                     <div class="col-sm-12 col-md-6">
                         <div class="hero-content">
                             <div class="hero-text">
-                                <p>I'm</p>
-                                <h1>Kate Winslet</h1>
-                                <h2></h2>
-                                <div class="typed-text">Web Designer, Web Developer, Front End Developer, Apps Designer, Apps Developer</div>
+                            <Typed
+                    strings={[`<h2>${'Munya developers'}</h2>`]}
+                    typeSpeed={90}
+                    style={{color:'white'}}
+                    loop
+                />
                             </div>
                             <div class="hero-btn">
                                 <a class="btn" href="">Hire Me</a>

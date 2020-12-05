@@ -31,9 +31,7 @@ const Index = () => {
       <Contact />
       <Blog />
       <Footer />
-      <div id="loader" class="show">
-        <div class="loader"></div>
-      </div>
+    
     </>
   );
 };
